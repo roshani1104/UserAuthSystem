@@ -1,0 +1,18 @@
+# Build output
+target/
+
+# IDE files
+.idea/
+*.iml
+.eclipse/
+.settings/
+.classpath
+.project
+
+# DB credentials — NEVER commit these
+src/main/resources/db.properties
+src/main/webapp/META-INF/context.xml
+
+# OS noise
+.DS_Store
+Thumbs.db
