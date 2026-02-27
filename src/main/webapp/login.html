@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In — AuthSystem</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ── Left art panel ─────────────────────── -->
+<aside class="side-art">
+
+  <!-- Orange vector illustration -->
+  <div class="side-illustration">
+    <svg viewBox="0 0 480 520" fill="none" xmlns="http://www.w3.org/2000/svg" class="art-svg">
+      <!-- Outer ring glow -->
+      <circle cx="240" cy="230" r="185" stroke="#c8401a" stroke-width="1" stroke-dasharray="6 10" opacity="0.25"/>
+      <circle cx="240" cy="230" r="155" stroke="#c8401a" stroke-width="0.5" opacity="0.15"/>
+
+      <!-- Shield body -->
+      <path d="M240 60 L320 95 L320 195 Q320 265 240 305 Q160 265 160 195 L160 95 Z"
+            fill="#c8401a" fill-opacity="0.08" stroke="#c8401a" stroke-width="2" stroke-linejoin="round"/>
+      <!-- Shield inner fill -->
+      <path d="M240 82 L308 112 L308 197 Q308 255 240 288 Q172 255 172 197 L172 112 Z"
+            fill="#c8401a" fill-opacity="0.06"/>
+      <!-- Shield highlight edge -->
+      <path d="M240 82 L308 112 L308 197 Q308 255 240 288"
+            stroke="#e0553a" stroke-width="1.5" stroke-opacity="0.4" fill="none" stroke-linecap="round"/>
+
+      <!-- Lock body -->
+      <rect x="216" y="195" width="48" height="38" rx="5"
+            fill="#c8401a" fill-opacity="0.9" stroke="#e8784a" stroke-width="1.2"/>
+      <!-- Lock shackle -->
+      <path d="M226 195 L226 180 Q226 162 240 162 Q254 162 254 180 L254 195"
+            stroke="#c8401a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <!-- Lock keyhole -->
+      <circle cx="240" cy="210" r="5" fill="#0e0e12"/>
+      <rect x="237.5" y="210" width="5" height="8" rx="1" fill="#0e0e12"/>
+
+      <!-- Circuit lines radiating out -->
+      <line x1="160" y1="195" x2="80" y2="195" stroke="#c8401a" stroke-width="1" stroke-opacity="0.35"/>
+      <circle cx="80" cy="195" r="3.5" fill="#c8401a" fill-opacity="0.5"/>
+      <line x1="80" y1="195" x2="80" y2="150" stroke="#c8401a" stroke-width="1" stroke-opacity="0.25"/>
+      <circle cx="80" cy="150" r="2.5" fill="#c8401a" fill-opacity="0.4"/>
+      <line x1="80" y1="195" x2="40" y2="195" stroke="#c8401a" stroke-width="1" stroke-opacity="0.2"/>
+      <circle cx="40" cy="195" r="2" fill="#c8401a" fill-opacity="0.3"/>
+
+      <line x1="320" y1="195" x2="400" y2="195" stroke="#c8401a" stroke-width="1" stroke-opacity="0.35"/>
+      <circle cx="400" cy="195" r="3.5" fill="#c8401a" fill-opacity="0.5"/>
+      <line x1="400" y1="195" x2="400" y2="140" stroke="#c8401a" stroke-width="1" stroke-opacity="0.25"/>
+      <circle cx="400" cy="140" r="2.5" fill="#c8401a" fill-opacity="0.4"/>
+      <line x1="400" y1="195" x2="440" y2="195" stroke="#c8401a" stroke-width="1" stroke-opacity="0.2"/>
+      <circle cx="440" cy="195" r="2" fill="#c8401a" fill-opacity="0.3"/>
+
+      <!-- Top circuit lines -->
+      <line x1="240" y1="60" x2="240" y2="30" stroke="#c8401a" stroke-width="1" stroke-opacity="0.3"/>
+      <circle cx="240" cy="30" r="3" fill="#c8401a" fill-opacity="0.45"/>
+      <line x1="240" y1="30" x2="200" y2="30" stroke="#c8401a" stroke-width="1" stroke-opacity="0.2"/>
+      <line x1="240" y1="30" x2="280" y2="30" stroke="#c8401a" stroke-width="1" stroke-opacity="0.2"/>
+      <circle cx="200" cy="30" r="2" fill="#c8401a" fill-opacity="0.35"/>
+      <circle cx="280" cy="30" r="2" fill="#c8401a" fill-opacity="0.35"/>
+
+      <!-- Bottom circuit lines -->
+      <line x1="240" y1="305" x2="240" y2="360" stroke="#c8401a" stroke-width="1" stroke-opacity="0.3"/>
+      <circle cx="240" cy="360" r="3" fill="#c8401a" fill-opacity="0.45"/>
+      <line x1="240" y1="360" x2="180" y2="360" stroke="#c8401a" stroke-width="1" stroke-opacity="0.2"/>
+      <line x1="240" y1="360" x2="300" y2="360" stroke="#c8401a" stroke-width="1" stroke-opacity="0.2"/>
+      <circle cx="180" cy="360" r="2" fill="#c8401a" fill-opacity="0.35"/>
+      <circle cx="300" cy="360" r="2" fill="#c8401a" fill-opacity="0.35"/>
+
+      <!-- Small data nodes floating -->
+      <rect x="55" y="120" width="32" height="20" rx="4" fill="#c8401a" fill-opacity="0.1" stroke="#c8401a" stroke-width="0.8" stroke-opacity="0.4"/>
+      <line x1="59" y1="128" x2="75" y2="128" stroke="#c8401a" stroke-width="1" stroke-opacity="0.5"/>
+      <line x1="59" y1="133" x2="69" y2="133" stroke="#c8401a" stroke-width="1" stroke-opacity="0.3"/>
+
+      <rect x="393" y="100" width="32" height="20" rx="4" fill="#c8401a" fill-opacity="0.1" stroke="#c8401a" stroke-width="0.8" stroke-opacity="0.4"/>
+      <line x1="397" y1="108" x2="413" y2="108" stroke="#c8401a" stroke-width="1" stroke-opacity="0.5"/>
+      <line x1="397" y1="113" x2="407" y2="113" stroke="#c8401a" stroke-width="1" stroke-opacity="0.3"/>
+
+      <rect x="160" y="340" width="32" height="20" rx="4" fill="#c8401a" fill-opacity="0.1" stroke="#c8401a" stroke-width="0.8" stroke-opacity="0.4"/>
+      <line x1="164" y1="348" x2="180" y2="348" stroke="#c8401a" stroke-width="1" stroke-opacity="0.5"/>
+      <line x1="164" y1="353" x2="174" y2="353" stroke="#c8401a" stroke-width="1" stroke-opacity="0.3"/>
+
+      <rect x="288" y="340" width="32" height="20" rx="4" fill="#c8401a" fill-opacity="0.1" stroke="#c8401a" stroke-width="0.8" stroke-opacity="0.4"/>
+      <line x1="292" y1="348" x2="308" y2="348" stroke="#c8401a" stroke-width="1" stroke-opacity="0.5"/>
+      <line x1="292" y1="353" x2="302" y2="353" stroke="#c8401a" stroke-width="1" stroke-opacity="0.3"/>
+
+      <!-- Corner accent dots -->
+      <circle cx="100" cy="80"  r="2" fill="#c8401a" fill-opacity="0.2"/>
+      <circle cx="380" cy="80"  r="2" fill="#c8401a" fill-opacity="0.2"/>
+      <circle cx="100" cy="380" r="2" fill="#c8401a" fill-opacity="0.2"/>
+      <circle cx="380" cy="380" r="2" fill="#c8401a" fill-opacity="0.2"/>
+    </svg>
+  </div>
+
+  <div class="side-logo">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="28" height="28" rx="6" fill="currentColor" fill-opacity="0.12"/>
+      <path d="M7 21L14 7L21 21M10.5 16H17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="side-logo-text">AuthSystem</span>
+  </div>
+
+  <div class="side-quote">
+    <blockquote>
+      The strength of a system lies in<br/>
+      <em>who it lets in</em> — and who it keeps out.
+    </blockquote>
+    <cite>— System Design Principle</cite>
+  </div>
+</aside>
+
+<!-- ── Right form panel ───────────────────── -->
+<main class="form-panel">
+  <div class="form-panel-inner">
+
+    <p class="page-eyebrow">Welcome back</p>
+    <h1 class="page-title">Sign in to your<br/>account</h1>
+    <p class="page-sub">Enter your credentials to continue.</p>
+
+    <!-- Alert -->
+    <div id="alert" style="display:none" role="alert"></div>
+
+    <!-- Form -->
+    <form class="form" action="login" method="POST" novalidate id="loginForm">
+
+      <!-- Email -->
+      <div class="field">
+        <label for="email">Email Address</label>
+        <div class="input-wrap">
+          <span class="f-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 6 10-6"/>
+            </svg>
+          </span>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email"/>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="field">
+        <label for="password">Password</label>
+        <div class="input-wrap">
+          <span class="f-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </span>
+          <input type="password" id="password" name="password" placeholder="Your password" required autocomplete="current-password"/>
+          <button type="button" class="pw-toggle" id="pwToggle" aria-label="Show password">
+            <svg id="eyeIcon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button class="btn-submit" type="submit">
+        Sign In
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+
+      <div class="divider">or</div>
+
+      <p class="form-footer">Don't have an account? <a href="register.html">Create one</a></p>
+
+    </form>
+  </div>
+</main>
+
+<script>
+/* ── Alert from query string ─────────────── */
+(function() {
+  const p = new URLSearchParams(location.search);
+  const el = document.getElementById('alert');
+  const errSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+  const okSvg  = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>`;
+  if (p.get('error')) {
+    el.style.display = 'flex';
+    el.className = 'alert alert-error';
+    el.innerHTML = errSvg + p.get('error');
+  } else if (p.get('success')) {
+    el.style.display = 'flex';
+    el.className = 'alert alert-success';
+    el.innerHTML = okSvg + p.get('success');
+  }
+})();
+
+/* ── Password toggle ─────────────────────── */
+document.getElementById('pwToggle').addEventListener('click', function() {
+  const inp = document.getElementById('password');
+  const showing = inp.type === 'text';
+  inp.type = showing ? 'password' : 'text';
+  document.getElementById('eyeIcon').innerHTML = showing
+    ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>'
+    : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+});
+
+/* ── Client-side validation ──────────────── */
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  const email = document.getElementById('email').value.trim();
+  const pw    = document.getElementById('password').value;
+  const el    = document.getElementById('alert');
+  const errSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+  if (!email || !pw) {
+    e.preventDefault();
+    el.style.display = 'flex';
+    el.className = 'alert alert-error';
+    el.innerHTML = errSvg + 'Please fill in all fields.';
+  }
+});
+
+
+</script>
+</body>
+</html>

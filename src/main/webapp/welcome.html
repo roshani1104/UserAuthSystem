@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome — AuthSystem</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    html, body { overflow: auto; height: auto; display: block; }
+
+    body {
+      min-height: 100vh;
+      background: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .welcome-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: clamp(40px, 6vw, 64px);
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .welcome-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--paper2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .welcome-icon svg { color: var(--accent); }
+
+    .welcome-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .welcome-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .welcome-title span {
+      color: var(--accent);
+    }
+
+    .welcome-sub {
+      font-size: 15px;
+      color: var(--ink-muted);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .welcome-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--paper2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin-bottom: 36px;
+    }
+
+    .welcome-email svg { color: var(--ink-muted); flex-shrink: 0; }
+
+    .btn-logout {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-logout:hover { background: var(--ink-soft); }
+  </style>
+</head>
+<body>
+
+<div class="welcome-card">
+
+  <!-- Checkmark icon -->
+  <div class="welcome-icon">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+  </div>
+
+  <p class="welcome-eyebrow">Logged In Successfully</p>
+
+  <!-- Name injected by WelcomeServlet -->
+  <h1 class="welcome-title">Welcome, <span id="userName"></span>!</h1>
+
+  <p class="welcome-sub">You have successfully signed in to your account.</p>
+
+  <!-- Email badge -->
+  <div class="welcome-email">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span id="userEmail"></span>
+  </div>
+
+  <br/>
+
+  <a href="logout" class="btn-logout">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+      <polyline points="16 17 21 12 16 7"/>
+      <line x1="21" y1="12" x2="9" y2="12"/>
+    </svg>
+    Sign Out
+  </a>
+
+</div>
+
+<script>
+  // Read name and email injected as query params by WelcomeServlet
+  const p = new URLSearchParams(window.location.search);
+  document.getElementById('userName').textContent  = p.get('name')  || 'User';
+  document.getElementById('userEmail').textContent = p.get('email') || '';
+</script>
+
+</body>
+</html>
